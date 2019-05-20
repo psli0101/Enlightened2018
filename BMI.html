@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BMI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        function compareBMI(bmi){
+            var s = "";
+            if (bmi > 24){
+                s = "過重";
+            } else {
+                if (bmi < 18.5){
+                    s = "過輕";
+                } else {
+                    s = "正常";
+                }
+            }
+            document.getElementById("standard").innerHTML = s;
+        }
+        function showLevel(heigh){
+            var min = 18.5 * (heigh * heigh);
+            var max = 24 * (heigh * heigh);
+            document.getElementById("tall").innerText = heigh * 100 ;
+            document.getElementById("min").innerText = min.toFixed(2);
+            document.getElementById("max").innerText = max.toFixed(2);
+        }
+        function showBMI(){
+            var h = document.getElementById("heigh").value;
+            var w = document.getElementById("weight").value;
+            var b = w / (h*h);
+            b = b.toFixed(2);
+            compareBMI(b);
+            console.log(b);
+            //alert("BMI = "+b); 
+            document.getElementById("bmi").innerText = b;
+            showLevel(h);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>請輸入身高體重</h1>
+        <table>
+            <tr>
+                <td>
+                    <label>身高（公尺）：</label>
+                </td>
+                <td>
+                    <input type="text" id="heigh">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>體重（公斤）：</label>
+                </td>
+                <td>
+                    <input type="text" id="weight">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="check_me" onclick="showBMI()"></td>
+            </tr>
+        </table>
+        <p>你的BMI值為：<span id="bmi"></span></p>
+        <p>你的體重<span id="standard"></span></p>     
+    </div>
+    <br>
+    <div>
+        <h1>你的體重標準範圍</h1>
+        <table>
+            <tr>
+                <td>身高</td>
+                <td>過輕</td>
+                <td>過重</td>
+            </tr>
+            <tr>
+                <td><span id="tall"></span></td>
+                <td><span id="min"></span></td>
+                <td><span id="max"></span></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

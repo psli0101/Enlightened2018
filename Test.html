@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />    
+    <script src="test.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <p id="labOne">我是p段落。選文截自 Cecil Speaks - Night Vale Transcripts，感謝他的逐字稿；中文翻譯來自PS本人。</p>
+    <script>
+        var s = document.getElementById("labOne").innerText;
+        console.log(s);
+    </script>
+    <script>
+        function ClickMe(){
+            alert("驚不驚喜？意不意外？ ＯＤＯ");
+        }
+    </script>
+    <button onclick="ClickMe()"> 點我點我！快！</button>
+    <br/>
+    <br/>
+    <button onclick="ClickMe2()"> 朕許你點擊一下 </button>
+    <script>
+        var x = 1;
+        var sample = function(y){
+            var x = 100;
+            return x+y;
+        }
+        console.log(sample(50));
+        console.log(x);
+    </script>
+    <br>
+    <script>
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $("ul").append("<li>03 - Station Management</li>");
+                $("ol").append("<li>03 - Station Management</li>");
+            });
+        });
+    </script>
+    <p>我是p段落。這裡有無序列表跟有序列表可以練習append()跟prepend()。</p>
+    <ul>
+        <li>01 - Pilot</li>
+        <li>02 - Glow Cloud</li>
+    </ul>
+    <ol>
+        <li>01 - Pilot</li>
+        <li>02 - Glow Cloud</li>
+    </ol>
+    <button id="b1">新增</button>
+    <br>
+    <br>
+    <br>
+    <script>
+        $(document).ready(function(){
+	        $("#change").click(function(){
+		        $("#ajx").load("./test2.txt");
+	        });
+        });
+    </script>
+    <div id="ajx">
+        <h1>01 - Pilot</h1>
+        <p>
+                A friendly desert community where the sun is hot, the moon is beautiful, and mysterious lights pass overhead while we all pretend to sleep.
+                <br>
+                它是個友善的沙漠城市，那裡陽光炙熱、月色綺麗，而當我們自以為睡著時，不可思議的光會自上空飛過。
+                <br>
+                Welcome to Night Vale. 
+                <br>
+                歡迎來到夜谷。
+                <br>
+                Hello, listeners.
+                <br>
+                各位聽眾大家好。
+                <br>
+                To start things off, I’ve been asked to read this brief notice:
+                <br>
+                在我們開始之前，我被要求先唸一下這則小提醒：
+                <br>
+                The City Council announces the opening of a new Dog Park at the corner of Earl and Somerset, near the Ralph’s. They would like to remind everyone that dogs are not allowed in the Dog Park. People are not allowed in the Dog Park.
+                <br>
+                市議會宣布在伯爵路和薩默塞特街交接處的新狗狗公園開張了，就在拉爾夫的店隔壁。他們想提醒各位，狗是不允許進入狗狗公園的。民眾不能進入狗狗公園。
+                <br>
+                It is possible you will see Hooded Figures in the Dog Park.
+                <br>
+                你可能會看到兜帽人在狗狗公園。
+                <br>
+                Do not approach them. Do not approach the Dog Park.
+                <br>
+                不要接近他們。不要接近狗狗公園。
+        </p>
+    </div>
+    <button id="change">點我</button>
+</body>
+</html>

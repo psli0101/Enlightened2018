@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animate Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $("#sample").hide();
+            });
+            $("#b2").click(function(){
+                $("#sample").show();
+            });
+            $("#b3").click(function(){
+                $("#sample").fadeOut();
+            });
+            $("#b4").click(function(){
+                $("#sample").fadeIn();
+            });
+            $("#b5").click(function(){
+                $("#sample").slideDown();
+            });
+            $("#b6").click(function(){
+                $("#sample").animate({
+                    height:'150px',
+                    width:'400px'
+                });
+            });
+        });
+    </script>
+    <div>
+        <table>
+            <tr>
+                <td><button id="b1">hide()</td>
+                <td><button id="b2">show()</td>
+            </tr>
+            <tr>
+                <td><button id="b3">fade()</td>
+                <td><button id="b4">slide()</td>
+            </tr>
+            <tr>
+                <td><button id="b5">animate()</td>
+                <td><button id="b6">stop()</td>
+        </table>
+        <img id="sample" src="./circle.png">
+    </div>
+</body>
+</html>
